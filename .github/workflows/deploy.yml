@@ -1,0 +1,17 @@
+name: Build and deploy NGC project
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build ngc
+      run: |
+        npm install --location=global @nomocode/ngc
+        ngc build
