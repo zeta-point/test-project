@@ -15,4 +15,4 @@ jobs:
     - name: Build ngc
       run: |
         npm install --location=global @nomocode/ngc
-        ngc build
+        ngc deploy --env prod
