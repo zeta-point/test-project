@@ -1,1 +1,1 @@
-# test-project
+# Test project for testing NGC
