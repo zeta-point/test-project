@@ -12,7 +12,9 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Build ngc
+    - name: Deploy project
+      env:
+        NGC_VAR_NETLIFY_AUTH_TOKEN: ${{ secrets.NGC_VAR_NETLIFY_AUTH_TOKEN }}
       run: |
         docker network create --subnet 172.28.0.0/16 ngc-sandbox-network
         npm install --location=global @nomocode/ngc
